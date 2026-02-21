@@ -14,6 +14,7 @@ public class TSIDJacksonConfig {
     public Module tsidModule() {
         SimpleModule module = new SimpleModule();
         module.addSerializer(TSID.class, new TSIDToStringSerialize());
+        module.addDeserializer(TSID.class, new StringToTSIDDeserializer());
         return module;
     }
 
